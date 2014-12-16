@@ -70,19 +70,17 @@ var work={
   "jobs":[
     {
       "employer":"AT&T",
-      "title":"IT Team Lead",
-      "years":"2001-Present",
+      "title":"Development Team Lead",
       "location":"Dallas",
+      "dates":"2001-Present",
       "description":"Senior Java Developer"
-
     },
     {
       "employer":"GHG",
       "title":"Senior Software Developer",
-      "years":"1997-2001",
       "location":"Houston",
+      "dates":"1997-2001",
       "description":"Senior Software Developer"
-
     }
   ]
 };
@@ -109,7 +107,7 @@ function displayBio(){
 
 }
 function displayEductation(){
-  
+
 }
 function displayWork(){
   for (job in work.jobs){
@@ -121,6 +119,9 @@ function displayWork(){
   var formattedWorkDescription =  HTMLworkDescription.replace("%data%", work.jobs[job].description);
   $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedWorkDate+formattedWorkLocation+ formattedWorkDescription);
     }
+}
+function dispalyProjects(){
+  
 }
 // var formattedName = HTMLheaderName.replace("%data%", name);
 // var formattedRole = HTMLheaderRole.replace("%data%", role);
