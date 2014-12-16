@@ -22,10 +22,34 @@ var education={
         "name":"UHCL",
         "location":"Houston",
         "degree":"MS",
-        "major":["Computer Science","MIS"],
+        "majors":["Computer Science","MIS"],
         "dates":"1997",
-        "url":"http:/www.uhcl.edu",
-        "onlineCourses":[
+        "url":"http:/www.uhcl.edu"
+        /*"onlineCourses":[
+            {
+              "title":"Operating System",
+              "school":"UHCL CS",
+              "dates":"1996",
+              "url":"http://www.uhcl.com/CS01"
+            },
+            {
+              "title":"Java Programming",
+              "school":"UHCL CS",
+              "dates":"1996",
+              "url":"http://www.uhcl.com/CS03"
+            }
+        ]*/
+      },
+      {
+        "name":"DBU",
+        "location":"Dallas ",
+        "degree":"MBA",
+        "majors":["eCommerce","MIS"],
+        "dates":"2005",
+        "url":"http:/www.dbu.edu"
+       }
+  ],
+  onlineCourses:[
             {
               "title":"Operating System",
               "school":"UHCL CS",
@@ -39,30 +63,6 @@ var education={
               "url":"http://www.uhcl.com/CS03"
             }
         ]
-      },
-      {
-        "name":"DBU",
-        "location":"Dallas ",
-        "degree":"MBA",
-        "majors":["eCommerce","MIS"],
-        "dates":"2005",
-        "url":"http:/www.dbu.edu",
-        "onlineCourses":[
-            {
-              "title":"eMarketing",
-              "school":"DBU BS",
-              "dates":"2005",
-              "url":"http://www.dbu.com/BS01"
-            },
-            {
-              "title":"Marketing 101",
-              "school":"DBU BS",
-              "dates":"2005",
-              "url":"http://www.dbu.com/MK03"
-            }
-        ]
-      }
-  ]
 
 };
 
@@ -138,8 +138,30 @@ bio.display = function(){
   
 
 }
-education.display = function display(){
 
+education.display = function display(){
+  for (school in education.schools){
+    $('#education').append(HTMLschoolStart);
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    var formattedSchoolDate =  HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    var formattedSchoolLocation =  HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    var formattedSchoolMajor =  HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+    $(".education-entry:last").append(formattedSchoolName+formattedSchoolDegree+formattedSchoolDate
+    +formattedSchoolLocation+ formattedSchoolMajor);
+  }
+  if(education.onlineCourses.length >0){
+      $('#education').append(HTMLonlineClasses);
+      for (onlineCourse in education.onlineCourses){
+       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+      var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+      var formattedOnlinelDate =  HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+      var formattedOnlineURL =  HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+      $("#education").append(formattedOnlineTitle+formattedOnlineSchool+formattedOnlinelDate
+       +formattedOnlineURL);
+      }
+  }
+  
 }
 
 work.display= function display(){
@@ -150,8 +172,9 @@ work.display= function display(){
   var formattedWorkDate =  HTMLworkDates.replace("%data%", work.jobs[job].dates);
   var formattedWorkLocation =  HTMLworkLocation.replace("%data%", work.jobs[job].location);
   var formattedWorkDescription =  HTMLworkDescription.replace("%data%", work.jobs[job].description);
-  $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedWorkDate+formattedWorkLocation+ formattedWorkDescription);
-    }
+  $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedWorkDate
+    +formattedWorkLocation+ formattedWorkDescription);
+  }
 }
 projects.display = function (){
   for (project in projects.projects){
@@ -178,3 +201,4 @@ projects.display = function (){
 bio.display();
 work.display();
 projects.display();
+education.display();
