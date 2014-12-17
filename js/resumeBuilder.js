@@ -125,6 +125,13 @@ bio.display = function(){
   $("#topContacts").append (formattedLocation);
     $("#header").append(welcomeMessage);
  
+
+ $("#footerContacts").append (formattedMobile);
+  $("#footerContacts").append (formattedEmail);
+  $("#footerContacts").append (formattedTwitter);
+ $("#footerContacts").append (formattedGithub);
+  $("#footerContacts").append (formattedLocation);
+  
   if(bio.skills.length>0){
     $("#header").append(HTMLskillsStart);
   for(skill in bio.skills){
