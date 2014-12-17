@@ -131,7 +131,7 @@ bio.display = function(){
   $("#footerContacts").append (formattedTwitter);
  $("#footerContacts").append (formattedGithub);
   $("#footerContacts").append (formattedLocation);
-  
+
   if(bio.skills.length>0){
     $("#header").append(HTMLskillsStart);
   for(skill in bio.skills){
@@ -207,16 +207,16 @@ projects.display = function (){
   }
 }
 
-function locationizer(work) {
+/*function locationizer(work) {
     var locations = [];
     for (job in work.jobs){
         locations.push(work.jobs[job].location);
     }
     return locations;
-}
+}*/
 
 bio.display();
 work.display();
 projects.display();
 education.display();
-$('#mapDiv').append("googleMap");
+$('#mapDiv').append(googleMap);
