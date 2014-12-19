@@ -123,7 +123,7 @@ bio.display = function(){
  $("#topContacts").append (formattedGithub);
   $("#topContacts").append (formattedLocation);
     $("#header").append(welcomeMessage);
- 
+
 
  $("#footerContacts").append (formattedMobile);
   $("#footerContacts").append (formattedEmail);
@@ -169,7 +169,6 @@ education.display = function display(){
        +formattedOnlineURL);
       }
   }
-  
 }
 
 work.display= function display(){
@@ -183,6 +182,7 @@ work.display= function display(){
   $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedWorkDate
     +formattedWorkLocation+ formattedWorkDescription);
   }
+  $('#workExperience').append(HTMLworkBackToTop);
 }
 projects.display = function (){
   for (project in projects.projects){
@@ -204,6 +204,7 @@ projects.display = function (){
       }
     }
   }
+ 
 }
 
 /*function locationizer(work) {
@@ -214,8 +215,24 @@ projects.display = function (){
     return locations;
 }*/
 
+function displayNavBar(){
+  var navigationBar = $("#navList");
+  navigationBar.append("<li><a id='workExpLink' href='#workExperience'>Work Experience</a></li>");
+  navigationBar.append("<li><a href='#projects'>Projects</a></li>");
+  navigationBar.append("<li><a href='#education'>Education</a></li>");
+}
+
 bio.display();
+displayNavBar();
 work.display();
 projects.display();
 education.display();
 $('#mapDiv').append(googleMap);
+$(document).ready(function() {
+  $('#workBackToTop').click(function() {
+    $( '#workBackToTop').hide();
+  });
+  $('#workExpLink').click(function() {
+    $( '#workBackToTop').show();
+  });
+});

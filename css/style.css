@@ -1,7 +1,8 @@
 *{
     padding:0;
     margin:0;
-    font-family: 'Roboto', sans-serif;
+   font-family: 'Quattrocento', serif;
+
 }
 
 
@@ -24,6 +25,7 @@ h2 {
   font-style: bold;
   font-size: 24px;
   color: #999999;
+  color:#294860;
   line-height: 29px;
   padding: 10px;
 }
@@ -58,9 +60,10 @@ h2, h3, h4, h5 {
 }
 
 .location-text {
-  font-style: italic;
+ /*  font-style: italic; */
   font-size: 14px;
   color: #999999;
+  color:#294860;
   line-height: 16px;
   float: right;
 
@@ -77,6 +80,11 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+.backToTop{
+  /* float: right; */
+  text-align: center;
+   display: none; 
 }
 .navbar {
   display: inline;
@@ -117,8 +125,8 @@ h2:hover{
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  font-weight: norma;
+  color: #fefefe;
 }
 
 .gray {
@@ -133,9 +141,16 @@ h2:hover{
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #333;
+  font-family: 'Playfair Display', serif;
 }
-
+#header span{
+ /*  color : #fefefe; */
+  font-family: 'Quattrocento', serif;
+}
+#header h1{
+  font-family: 'Playfair Display', serif;
+}
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -145,6 +160,25 @@ h2:hover{
   padding: 10px;
 }
 
+#headerRole{
+  color:#fefefe;
+}
+#navigation{
+  background-color: #333;
+  border-top:2px solid #F5AE23;
+  border-bottom:2px solid #F5AE23;
+  width: auto;
+  padding:0;
+  margin: 0px;
+  line-height: 36px;
+  
+}
+#navList li, #navigation a{
+  display: inline;
+  padding:0 3px;
+  font-size:  16px;
+
+}
 .center-content {
   padding: 5%;
 }
