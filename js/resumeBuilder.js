@@ -8,7 +8,7 @@ var bio={
     "mobile":"972-571-8435",
     "email":"parachaz@gmail.com",
     "github":"https://github.com/parachaz",
-    "twitter":"@zparacha",
+    "twitter":"zparacha",
     "location":"Dallas"
 },
   "welcomeMessage":"Experienced IT professional",
@@ -25,20 +25,6 @@ var education={
         "majors":["Computer Science","MIS"],
         "dates":"1997",
         "url":"http:/www.uhcl.edu"
-        /*"onlineCourses":[
-            {
-              "title":"Operating System",
-              "school":"UHCL CS",
-              "dates":"1996",
-              "url":"http://www.uhcl.com/CS01"
-            },
-            {
-              "title":"Java Programming",
-              "school":"UHCL CS",
-              "dates":"1996",
-              "url":"http://www.uhcl.com/CS03"
-            }
-        ]*/
       },
       {
         "name":"DBU",
@@ -107,9 +93,22 @@ bio.display = function(){
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
   var formattedMobile= HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  var emailURL = '<a class="navbar" href="mailto:'
+  + bio.contacts.email 
+  +'">'+bio.contacts.email+'</a>';
+  //var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedEmail = HTMLemail.replace("%data%", emailURL);
+  var githubURL = '<a class="navbar" href="'
+  + bio.contacts.github 
+  +'" target="_blank">'+bio.contacts.github+'</a>';
+ 
+  //var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
+  var formattedGithub = HTMLgithub.replace("%data%",githubURL);
+  var twitterURL = '<a class="navbar" href="http://www.twitter.com/'
+  + bio.contacts.twitter 
+  +'" target="_blank">@'+bio.contacts.twitter+'</a>';
+  //var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  var  formattedTwitter = HTMLtwitter.replace("%data%", twitterURL);
   var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
   var profilePhoto = HTMLbioPic.replace("%data%", bio.bioPic);
   var welcomeMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);

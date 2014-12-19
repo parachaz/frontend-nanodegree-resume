@@ -78,7 +78,20 @@ a {
   margin-top: 10px;
   display: block;
 }
-
+.navbar {
+  display: inline;
+  color:#fff;
+  font-weight: normal;
+ 
+}
+.navbar:hover{
+  text-decoration: underline;
+  font-size: 95%;
+  color:#1199C3;
+}
+h2:hover{
+  color:#F5AE23;
+}
 .welcome-message {
   font-style: italic;
   font-size: 18px;
