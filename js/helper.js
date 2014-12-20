@@ -57,9 +57,12 @@ var HTMLonlineDates = "<div class='date-text'>%data%</div>";
 var HTMLonlineURL = "<br><a href='#'>%data%</a>";
 
 var HTMLworkBackToTop = "<a href='#top' class='backToTop' id='workBackToTop'>Back to Top </a>"
+var HTMLeducationBackToTop = "<a href='#top' class='backToTop' id='educationBackToTop'>Back to Top </a>"
+var HTMLprojectsBackToTop = "<a href='#top' class='backToTop' id='projectsBackToTop'>Back to Top </a>"
+var HTMLcontactBackToTop = "<a href='#top' class='backToTop' id='contactBackToTop'>Back to Top </a>"
 
 var navigationBar = "<div id='navigation'><ul></ul></div";
-          
+
 var internationalizeButton = "<button>Internationalize</button>";
 var googleMap = "<div id='map'></div>";
 
@@ -82,10 +85,10 @@ clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
-    {
-      "x": x,
-      "y": y
-    }
+  {
+    "x": x,
+    "y": y
+  }
   );
   console.log("x location: " + x + "; y location: " + y);
 }
@@ -158,8 +161,8 @@ function initializeMap() {
     var lon = placeData.geometry.location.B;  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
-     lat = placeData.geometry.location.lat();
-     lon = placeData.geometry.location.lng();
+    lat = placeData.geometry.location.lat();
+    lon = placeData.geometry.location.lng();
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
